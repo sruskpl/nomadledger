@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Travel Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+    <div class="section-card">
+    <h2>Currency Exchange</h2>
+    <div class="inputs">
+        
+        <label for="convertAmount">Enter Amount:</label>
+    <input type = "number" id="convertAmount">
+    <label for="fromCurrency">Choose a currency:</label>
+    <select id="fromCurrency">
+        <option value="" disabled selected></option>
+    </select>
+     
+    <label for="toCurrency">Choose a currency:</label>
+    <select id="toCurrency">
+        <option value="" disabled selected></option>
+    </select>
+        
+    <button class="btn" onclick="convertCurrency()">Convert</button>
+    </div>
+    <p id="exchangeResult" class="result"></p>
+    </div>
+    
+    <hr>
+    <div class="section-card">
+    <h2>Travel Budget Setup</h2>
+    <div class="inputs">
+        <label for="country">Destination Country:</label>
+    <input type="text" id="country">
+    <label for="amount">Planned Budget:</label>
+    <input type="number" id="amount">
+    <div class="tripDates">
+        <div class="date-card">
+    <label for="startDate">DEPARTURE DATE:</label>
+    <input type="date" id="startDate">
+    </div>
+    <div class="date-card">
+    <label for="endDate">RETURN DATE:</label>
+    <input type="date" id="endDate">
+    </div>
+    </div>
+    <label for="budgetCurrency">Original Currency:</label>
+    <select id="budgetCurrency">
+        <option value="" disabled selected></option>
+    </select>
+
+    <label for="countryCurrency">Destination Currency:</label>
+    <select id="countryCurrency">
+        <option value="" disabled selected></option>
+    </select>
+    <button class="btn" onclick="createBudget()">Create Budget</button>
+    </div>
+    <p id="budgetResult" class="result"></p>
+    </div>
+    <hr>
+    <div class="section-card">
+    <h2>Expense Management</h2>
+    <div class="inputs">
+        <label for="expenseCountry">Destination Country:</label>
+    <input type="text" id="expenseCountry">
+    <label for="city">City:</label>
+    <input type="text" id="city">
+    <label for="category">Choose a Category:</label>
+    <select id="category">
+        <option value="" disabled selected></option>
+    </select>
+    <label for="expenseAmount">Amount to be spent:</label>
+    <input type="number" id="expenseAmount">
+    <div class="date-card">
+    <label for="expenseDate">DATE OF EXPENSE:</label>
+    <input type="date" id="expenseDate">
+    </div>
+    <button class="btn" onclick="addExpense()">Add Expense</button>
+    </div>
+    <p id="expenseResult" class="result"></p>
+    </div>
+    <hr>
+    <div class="section-card">
+    <h2>Financial Overview</h2>
+    <div class="inputs">
+    <label for="summaryCountry">Select Country:</label>
+    <select id="summaryCountry">
+        <option value="" disabled selected></option>
+    </select>
+    <button class="btn" onclick="getSummary()">Show Summary</button>
+    </div>
+    <p id="summaryResult" class="result"></p>
+    </div>
+    <hr>
+    <section id="tripIntelligence">
+        <h2>Trip Intelligence</h2>
+        <button
+        class="btn"
+        onclick="loadTripIntelligence()">
+        Generate Insights
+        </button>
+        <div class="analyticsGrid">
+            <div class="cards">
+                <h3>Expense Trend</h3>
+                <canvas id="expenseChart"></canvas>
+            </div>
+            <div class="cards">
+                <h3>Spending by Country</h3>
+                <canvas id="countryChart"></canvas>
+            </div>
+            <div class="cards">
+                <h3>Category Breakdown</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+            <div class="cards">
+                <h3>Budget Utilization</h3>
+                <div class="progressContainer">
+                    <div id="budgetProgress" class="progress-bar"></div>
+                </div>
+                <p id="budgetStatus"></p>
+            </div>
+        </div>
+    </section>
+    <section class="logout">
+        <button id="logoutBtn">Log out</button>
+    </section>    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script.js"></script>
+</body>
+</html>

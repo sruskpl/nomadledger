@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-page">
+    <div class="user-details">
+        <div id="login">
+            <label for="loginEmail">Email:</label>
+            <input type="text" id="loginEmail">
+            <label for="loginPassword">Password:</label>
+            <div class="password-box">
+            <input type="password" id="loginPassword">
+            <span class="eye" onclick="togglePassword('loginPassword')"></span>
+            </div>
+            <button class="btn" id="loginuser" onclick="loginUser()">Login</button>
+            <button class="newBtn" onclick="showRegister()">New user? Register</button>
+        </div>
+        <div id="register">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+            <label for="password">Password:</label>
+            <div class="password-box">
+            <input type="password" id="password">
+            <span class="eye" onclick="togglePassword('password')"></span>
+            </div>
+            <button class="btn" id="registeruser" onclick="registerUser()">Register</button>
+            <button class="newBtn" onclick="showLogin()">Already a user? Login</button>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
