@@ -93,6 +93,9 @@ NomadLedger follows a client-server architecture.
 
 ## Screenshots
 
+### Landing Page
+![Landing Page](assets/images/Landing%20Page.png)
+
 ### Register
 ![Register Page](assets/images/Register.png)
 
